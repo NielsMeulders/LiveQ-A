@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 15px Helvetica, Arial;
+}
+ul li {
+	list-style-type: none;
+	clear: both;
+}
+ul li span {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+}
+ul li span.amount {
+	margin-left: 5px;
+}
+#products a.product {
+	margin: 0px 0px 10px 10px;
+	float: right;
+}
+.question
+{
+    background-color: #F2F2F2;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+#question_form
+{
+    
+}
+#question_form #message
+{
+    width: 100%;
+}
+#logo
+{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#header
+{
+    width: 100%;
+    background-color: #2F344F;
+    margin-left: auto;
+    margin-right: auto;
+}

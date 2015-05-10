@@ -1,35 +1,26 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
 2 info using npm@2.8.4
 3 info using node@v0.12.0
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart Blog-of-me@0.0.0
-6 info start Blog-of-me@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info Blog-of-me@0.0.0 Failed to exec start script
-9 verbose stack Error: Blog-of-me@0.0.0 start: `node app.js`
-9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
-9 verbose stack     at EventEmitter.emit (events.js:110:17)
-9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-9 verbose stack     at ChildProcess.emit (events.js:110:17)
-9 verbose stack     at maybeClose (child_process.js:1008:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
-10 verbose pkgid Blog-of-me@0.0.0
-11 verbose cwd /Volumes/Macintosh HD/Users/nielsmeulders/Documents/LiveQ-A
-12 error Darwin 14.3.0
-13 error argv "node" "/usr/local/bin/npm" "start"
-14 error node v0.12.0
-15 error npm  v2.8.4
-16 error code ELIFECYCLE
-17 error Blog-of-me@0.0.0 start: `node app.js`
-17 error Exit status 1
-18 error Failed at the Blog-of-me@0.0.0 start script 'node app.js'.
-18 error This is most likely a problem with the Blog-of-me package,
-18 error not with npm itself.
-18 error Tell the author that this fails on your system:
-18 error     node app.js
-18 error You can get their info via:
-18 error     npm owner ls Blog-of-me
-18 error There is likely additional logging output above.
-19 verbose exit [ 1, true ]
+4 verbose readDependencies loading dependencies from /Volumes/Macintosh HD/Users/nielsmeulders/Documents/LiveQ-A/package.json
+5 error install Couldn't read dependencies
+6 verbose stack Error: Invalid name: "Q&A"
+6 verbose stack     at ensureValidName (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:310:15)
+6 verbose stack     at Object.module.exports.fixNameField (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:205:5)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:30:38
+6 verbose stack     at Array.forEach (native)
+6 verbose stack     at normalize (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:29:15)
+6 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:338:5)
+6 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
+6 verbose stack     at evalmachine.<anonymous>:336:14
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+7 verbose cwd /Volumes/Macintosh HD/Users/nielsmeulders/Documents/LiveQ-A
+8 error Darwin 14.4.0
+9 error argv "node" "/usr/local/bin/npm" "install"
+10 error node v0.12.0
+11 error npm  v2.8.4
+12 error Invalid name: "Q&A"
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]

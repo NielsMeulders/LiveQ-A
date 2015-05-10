@@ -1,8 +1,48 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-
-- each post in posts
-    p= post.title
+doctype html
+html
+  head
+    title Q&amp;A
+    | &#x9;
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    | &#x9;
+    link(rel='stylesheet', href='css/style.css')
+  | &#x9;
+  body
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          h1.text-center Q&amp;A
+      | &#x9;&#x9;&#x9;
+      .row
+        .col-md-4
+          ul#products
+      | &#x9;&#x9;&#x9;
+      .row
+        .col-md-4
+          form.form-inline(action='')
+            input#message.form-control(type='text')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            input#btn.btn.btn-default(type='button', value='Verstuur bericht')
+    | &#x9;&#x9;
+    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+    | &#x9;&#x9;
+    script(src='http://code.jquery.com/jquery-1.11.1.js')
+    | &#x9;&#x9;
+    script.
+      $(document).ready(function() {
+      var socket = io();
+      $('#btn').on('click', function() {
+      socket.emit('message', $("#message").val());
+      });
+      socket.on('startMessages', function(messages) {
+      $('#products').val();
+      var length = messages.length;
+      for(var i = 0; i < messages.length; i++) {
+      $('#products').append('<li class="question">'+messages[i].message+'</li>');
+      }
+      });
+      socket.on('update', function(update) {
+      console.log('update', update);
+      $('#products').append('<li>'+update.message+'</li>');
+      });
+      });
