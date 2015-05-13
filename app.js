@@ -26,18 +26,6 @@ app.get("/detail.html", function(req, res) {
     res.render('detail');
 });
 
-var Product = app.product = restful.model('Product', mongoose.Schema({
-	name: {
-		type: String,
-		required: true
-	},
-	amount: {
-		type: Number,
-		required: true,
-		default: 0
-	}
-}, {collection: 'product'})).methods(['get', 'post', 'put', 'delete']);
-Product.register(app, '/product');
 
 var Message = app.message = restful.model('Message', mongoose.Schema({
 	message: {

@@ -12,17 +12,18 @@
 					<p><img src="images/logo.svg" alt="logo" id="logo"></p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<ul id="products"></ul>
-				</div>
-			</div>
+			<br>
 			<div class="row">
 				<div class="col-md-6">
 					<form action="" class="form-inline" role="form" id="question_form">
 						<input type="text" id="message" class="form-control">
 						<input type="button" id="btn" value="Verstuur bericht" class="btn btn-default">
 					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<ul id="products"></ul>
 				</div>
 			</div>
 		</div>
@@ -38,17 +39,17 @@
 				});
 
 				socket.on('startMessages', function(messages) {
-					$('#products').val();
+					$('#products').val("");
 					var length = messages.length;
 					for(var i = 0; i < messages.length; i++) {
                         
-						$('#products').append('<li class="question">'+messages[i].message+'</li>'+'<a href="detail.html">Detail</a>');
+						$('#products').prepend('<li class="question">'+messages[i].message+'</li>'+'<a class="detail_btn" href="detail.html">Detail</a>');
 					}
 				});
 
 				socket.on('update', function(update) {
 					console.log('update', update);
-					$('#products').append('<li class="question">'+update.message+'</li>'+'<a href="detail.html">Detail</a>');
+					$('#products').prepend('<li class="question">'+update.message+'</li>'+'<a class="detail_btn" href="detail.html">Detail</a>');
 				});
 			});
 		</script>

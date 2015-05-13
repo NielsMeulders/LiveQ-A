@@ -50,3 +50,8 @@ ul li span.amount {
     margin-left: auto;
     margin-right: auto;
 }
+a.detail_btn
+{
+    border-bottom: 1px solid #CCC;
+    display: block;
+}
